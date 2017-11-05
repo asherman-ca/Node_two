@@ -1,5 +1,5 @@
 import config from './config';
-import apiRouter from './api';
+// import apiRouter from './api';
 import express from 'express';
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
@@ -24,7 +24,7 @@ server.get(['/'], (req, res) => {
      });
 });
 
-server.use('/api', apiRouter);
+// server.use('/api', apiRouter);
 // server.use(express.static('public'));
 // server.use(express.static(path.join(__dirname, 'public')));
 server.use(express.static(__dirname + '/public'));

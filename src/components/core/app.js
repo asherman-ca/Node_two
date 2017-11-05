@@ -1,16 +1,12 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import Nav from './navbar/Nav';
 
-class App extends React.Component {
-
-  render() {
-    return (
-    <div>
-      <Nav />
-    </div>
-    );
-  }
-}
+const App = ({ children }) => {
+  return(
+    <section>
+      <h1>App</h1>
+      { children }
+    </section>
+  );
+};
 
 export default App;

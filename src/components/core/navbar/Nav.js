@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
 import Logged from './Logged';
 import Drawer from './Drawer';
 
@@ -11,13 +10,11 @@ class AppBarExampleComposition extends Component {
 
   render() {
     return (
-      <div>
-        <AppBar
-          title="Creddit"
-          iconElementLeft={<Drawer />}
-          iconElementRight={this.state.logged ? <Logged /> : <FlatButton label="Login" /> }
-        />
-      </div>
+      <AppBar
+        title="Creddit"
+        iconElementLeft={<Drawer />}
+        iconElementRight={<span style={{ width: 20, display: 'inline-block' }} />}
+      />
     );
   }
 }
