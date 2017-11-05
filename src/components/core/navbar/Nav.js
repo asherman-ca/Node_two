@@ -11,9 +11,10 @@ class AppBarExampleComposition extends Component {
   render() {
     return (
       <AppBar
-        title="Creddit"
-        iconElementLeft={<Drawer />}
-        iconElementRight={<span style={{ width: 20, display: 'inline-block' }} />}
+        title="Pokr"
+        titleStyle={{fontWeight: 'bold'}}
+        iconElementLeft={<span style={{ width: 20, display: 'inline-block' }} />}
+        iconElementRight={<Logged />}
       />
     );
   }

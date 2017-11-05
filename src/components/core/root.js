@@ -9,8 +9,8 @@ const Root = ({ store }) => {
 
   const customizedTheme = {
     palette: {
-      primary1Color: '#6DB3C2',
-      accent1Color: 'gray',
+      primary1Color: '#30673a',
+      accent1Color: 'white',
     }
   };
 

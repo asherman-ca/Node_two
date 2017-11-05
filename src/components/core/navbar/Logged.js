@@ -10,7 +10,7 @@ export const Logged = (props) => {
     <IconMenu
       {...props}
       iconButtonElement={
-        <IconButton><MoreVertIcon /></IconButton>
+        <IconButton><MoreVertIcon className="topcon" /></IconButton>
       }
       targetOrigin={{ horizontal: 'right', vertical: 'top' }}
       anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
