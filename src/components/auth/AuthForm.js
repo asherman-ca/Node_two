@@ -12,7 +12,7 @@ export default class AuthForm extends React.Component {
     console.log('auth form');
     return (
       <div>
-        Records Index
+        Auth Form
       </div>
     );
   }

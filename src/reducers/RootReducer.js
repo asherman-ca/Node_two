@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import RecordsReducer from './RecordsReducer';
 
 const rootReducer = combineReducers({
