@@ -1,10 +1,10 @@
 import React from 'react';
-import Nav from './navbar/Nav';
+import Navtab from './navtab/Navtab';
 
 const App = ({ children }) => {
   return(
     <section>
-      <Nav />
+      <Navtab />
       { children }
     </section>
   );

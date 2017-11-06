@@ -1,11 +1,17 @@
 import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 import App from './app';
+import RecordsIndexContainer from '../records/RecordsIndexContainer';
+import AuthFormContainer from '../auth/AuthFormContainer';
 
 const Root = ({ store }) => {
+
+  const history = syncHistoryWithStore(browserHistory, store);
 
   const customizedTheme = {
     palette: {
@@ -17,9 +23,10 @@ const Root = ({ store }) => {
   return (
     <MuiThemeProvider muiTheme={ getMuiTheme(customizedTheme) }>
       <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={history}>
           <Route path='/' component={ App }>
-
+            <IndexRoute component={ RecordsIndexContainer } />
+            <Route path='auth' component={ AuthFormContainer } />
           </Route>
         </Router>
       </Provider>
