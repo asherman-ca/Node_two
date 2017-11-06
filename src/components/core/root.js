@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -32,8 +31,8 @@ const Root = ({ store }) => {
   );
 };
 
-Root.propTypes = {
-  store: React.PropTypes.object.isRequired
-};
+// Root.propTypes = {
+//   store: React.PropTypes.object.isRequired
+// };
 
 export default Root;

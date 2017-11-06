@@ -2,6 +2,8 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
 import { withRouter } from 'react-router';
+import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
+import Records from 'material-ui/svg-icons/maps/rate-review';
 
 // const SELECT_MAP = {
 //   '/': 0,
@@ -35,28 +37,29 @@ class Navtab extends React.Component {
     this.state = {
       loading: false
     };
-    this.authLink = this.authLink.bind(this);
+    this.handleActive = this.handleActive.bind(this);
   }
 
-  authLink() {
-    console.log('auth link');
-    this.props.router.push('/auth');
+  handleActive(tab) {
+    this.props.router.push(`${tab.props['data-route']}`);
   }
 
   render() {
     return(
       <div>
-        <Tabs initialSelectedIndex={1}>
+        <Tabs>
           <Tab
-            icon={<FontIcon className="fa fa-file-text" />}
-            label="Browse"
-            onClick={() => this.props.router.push('/')}
+            label="Records"
+            icon={<Records />}
+            data-route="/"
+            onActive={this.handleActive}
           >
           </Tab>
           <Tab
-            icon={<FontIcon className="fa fa-search" />}
             label="Profile"
-            onClick={() => this.authLink}
+            icon={<MapsPersonPin />}
+            data-route="/auth"
+            onActive={this.handleActive}
           >
           </Tab>
         </Tabs>
