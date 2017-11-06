@@ -31,6 +31,11 @@ import Records from 'material-ui/svg-icons/maps/rate-review';
 
 // export default withRouter(Navtab);
 
+const SELECT_MAP = {
+  '/': 0,
+  '/auth': 1
+};
+
 class Navtab extends React.Component {
   constructor(props){
     super(props);
@@ -47,7 +52,7 @@ class Navtab extends React.Component {
   render() {
     return(
       <div>
-        <Tabs>
+        <Tabs initialSelectedIndex={SELECT_MAP[this.props.router.location.pathname]}>
           <Tab
             label="Records"
             icon={<Records />}

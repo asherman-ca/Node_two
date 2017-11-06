@@ -26374,6 +26374,11 @@
 	
 	// export default withRouter(Navtab);
 	
+	var SELECT_MAP = {
+	  '/': 0,
+	  '/auth': 1
+	};
+	
 	var Navtab = function (_React$Component) {
 	  _inherits(Navtab, _React$Component);
 	
@@ -26402,7 +26407,7 @@
 	        null,
 	        _react2.default.createElement(
 	          _Tabs.Tabs,
-	          null,
+	          { initialSelectedIndex: SELECT_MAP[this.props.router.location.pathname] },
 	          _react2.default.createElement(_Tabs.Tab, {
 	            label: 'Records',
 	            icon: _react2.default.createElement(_rateReview2.default, null),
