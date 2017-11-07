@@ -3,7 +3,7 @@ import Navtab from './navtab/NavtabContainer';
 
 const App = ({ children }) => {
   return(
-    <section>
+    <section className="origin">
       <Navtab />
       { children }
     </section>

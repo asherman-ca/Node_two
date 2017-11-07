@@ -33,7 +33,7 @@ import Records from 'material-ui/svg-icons/maps/rate-review';
 
 const SELECT_MAP = {
   '/': 0,
-  '/auth': 1
+  '/forms': 1
 };
 
 class Navtab extends React.Component {
@@ -52,18 +52,16 @@ class Navtab extends React.Component {
   render() {
     return(
       <div>
-        <Tabs initialSelectedIndex={SELECT_MAP[this.props.router.location.pathname]}>
+        <Tabs className="navtab" initialSelectedIndex={SELECT_MAP[this.props.router.location.pathname]}>
           <Tab
-            label="Records"
-            icon={<Records />}
+            icon={<i className="fa fa-users three-times" aria-hidden="true"></i>}
             data-route="/"
             onActive={this.handleActive}
           >
           </Tab>
           <Tab
-            label="Profile"
-            icon={<MapsPersonPin />}
-            data-route="/auth"
+            icon={<i className="fa fa-cogs three-times" aria-hidden="true"></i>}
+            data-route="/forms"
             onActive={this.handleActive}
           >
           </Tab>

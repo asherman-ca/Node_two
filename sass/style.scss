@@ -130,6 +130,25 @@ table {
   border-spacing: 0;
 }
 
-.topcon {
-  color: white !important;
+.three-times {
+  font-size: 3em !important;
+}
+
+.navtab {
+  button {
+    height: 90px;
+  }
+}
+
+.origin {
+  height: 100vh;
+}
+
+.records-index {
+  height: calc(100% - 90px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
