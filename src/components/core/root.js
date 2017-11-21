@@ -6,8 +6,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import App from './app';
 import RecordsIndexContainer from '../records/RecordsIndexContainer';
-import RecordsFormContainer from '../recordform/RecordFormContainer';
 import AuthFormContainer from '../auth/AuthFormContainer';
+import RecordFormContainer from '../recordform/RecordFormContainer';
+
 
 const Root = ({ store }) => {
 
@@ -24,8 +25,8 @@ const Root = ({ store }) => {
         <Router history={ hashHistory }>
           <Route path='/' component={ App }>
             <IndexRoute component={ RecordsIndexContainer } />
-            <Route path='forms' component={ RecordsFormContainer } />
-            <Route path='auth' component={ AuthFormContainer} />
+            <Route path='forms' component={ RecordFormContainer } />
+            <Route path='auth' component={ AuthFormContainer } />
           </Route>
         </Router>
       </Provider>
