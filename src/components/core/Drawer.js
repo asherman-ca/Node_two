@@ -4,6 +4,10 @@ import MenuItem from 'material-ui/MenuItem';
 import ChevRight from 'material-ui/svg-icons/navigation/chevron-right';
 import IconButton from 'material-ui/IconButton';
 
+const style = {
+  color: 'white'
+};
+
 export default class DrawerSimpleExample extends React.Component {
 
   constructor(props) {
@@ -18,10 +22,11 @@ export default class DrawerSimpleExample extends React.Component {
   render() {
     return (
       <div>
-        <IconButton>
-          <ChevRight
-            onClick={this.handleToggle}
-          />
+        <IconButton 
+          iconStyle={style}
+          iconClassName="fa fa-folder-open-o"
+          onClick={this.handleToggle}
+        >
         </IconButton>
         <Drawer
           docked={false} 

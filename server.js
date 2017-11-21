@@ -17,11 +17,7 @@ server.use(sassMiddleware({
 server.set('view engine', 'ejs');
 
 server.get(['/'], (req, res) => {
-  res.render('index')
-     .catch(error => {
-       console.error(error);
-       res.status(404).send('Bad Request');
-     });
+  res.render('index');
 });
 
 // server.use('/api', apiRouter);
