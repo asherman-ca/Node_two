@@ -129,11 +129,18 @@ table {
   height: 90px; }
 
 .origin {
-  height: 100vh; }
+  height: 100vh;
+  overflow-y: overlay; }
+
+.drawer-item {
+  padding: 0px 25px;
+  display: flex;
+  justify-content: space-around; }
 
 .records-index {
-  height: calc(100% - 90px);
+  min-height: calc(100% - 90px);
   width: 100%;
+  padding-top: 35px;
   display: flex;
   flex-direction: column;
   justify-content: center;

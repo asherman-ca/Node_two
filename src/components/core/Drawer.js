@@ -1,11 +1,16 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import ChevRight from 'material-ui/svg-icons/navigation/chevron-right';
 import IconButton from 'material-ui/IconButton';
+import { values } from 'lodash';
+import DrawerItem from './DrawerItem';
 
 const style = {
   color: 'white'
+};
+
+const drawerStyle = {
+  paddingTop: 25
 };
 
 export default class DrawerSimpleExample extends React.Component {
@@ -29,12 +34,14 @@ export default class DrawerSimpleExample extends React.Component {
         >
         </IconButton>
         <Drawer
+          containerStyle={drawerStyle}
           docked={false} 
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem>Menu Item</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
+          {values(this.props.totals).map(player => {
+            return <DrawerItem player={player} />;
+          })}
         </Drawer>
       </div>
     );

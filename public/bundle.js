@@ -26280,6 +26280,15 @@
 	  right: 50
 	};
 	
+	var totals = {
+	  1: { userName: 'Alex', userId: 1, total: 530 },
+	  2: { userName: 'Raymond', userId: 2, total: 200 },
+	  3: { userName: 'Matt', userId: 3, total: 30 },
+	  4: { userName: 'David', userId: 4, total: -50 },
+	  5: { userName: 'Carson', userId: 5, total: -600 },
+	  6: { userName: 'Kelly', userId: 6, total: -300 }
+	};
+	
 	var App = function App(_ref) {
 	  var children = _ref.children;
 	
@@ -26291,7 +26300,7 @@
 	    _react2.default.createElement(
 	      _FloatingActionButton2.default,
 	      { style: style },
-	      _react2.default.createElement(_Drawer2.default, null)
+	      _react2.default.createElement(_Drawer2.default, { totals: totals })
 	    )
 	  );
 	};
@@ -30264,6 +30273,30 @@
 	    6: { userName: 'Kelly', userId: 6, take: 60 }
 	  },
 	  102817: {
+	    1: { userName: 'Alex', userId: 1, take: -40 },
+	    2: { userName: 'Raymond', userId: 2, take: 80 },
+	    3: { userName: 'Matt', userId: 3, take: -40 },
+	    4: { userName: 'David', userId: 4, take: 80 },
+	    5: { userName: 'Carson', userId: 5, take: -40 },
+	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  },
+	  102117: {
+	    1: { userName: 'Alex', userId: 1, take: -40 },
+	    2: { userName: 'Raymond', userId: 2, take: 80 },
+	    3: { userName: 'Matt', userId: 3, take: -40 },
+	    4: { userName: 'David', userId: 4, take: 80 },
+	    5: { userName: 'Carson', userId: 5, take: -40 },
+	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  },
+	  101417: {
+	    1: { userName: 'Alex', userId: 1, take: -40 },
+	    2: { userName: 'Raymond', userId: 2, take: 80 },
+	    3: { userName: 'Matt', userId: 3, take: -40 },
+	    4: { userName: 'David', userId: 4, take: 80 },
+	    5: { userName: 'Carson', userId: 5, take: -40 },
+	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  },
+	  100717: {
 	    1: { userName: 'Alex', userId: 1, take: -40 },
 	    2: { userName: 'Raymond', userId: 2, take: 80 },
 	    3: { userName: 'Matt', userId: 3, take: -40 },
@@ -42822,13 +42855,15 @@
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
-	var _chevronRight = __webpack_require__(/*! material-ui/svg-icons/navigation/chevron-right */ 390);
-	
-	var _chevronRight2 = _interopRequireDefault(_chevronRight);
-	
 	var _IconButton = __webpack_require__(/*! material-ui/IconButton */ 378);
 	
 	var _IconButton2 = _interopRequireDefault(_IconButton);
+	
+	var _lodash = __webpack_require__(/*! lodash */ 315);
+	
+	var _DrawerItem = __webpack_require__(/*! ./DrawerItem */ 391);
+	
+	var _DrawerItem2 = _interopRequireDefault(_DrawerItem);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -42840,6 +42875,10 @@
 	
 	var style = {
 	  color: 'white'
+	};
+	
+	var drawerStyle = {
+	  paddingTop: 25
 	};
 	
 	var DrawerSimpleExample = function (_React$Component) {
@@ -42878,22 +42917,16 @@
 	        _react2.default.createElement(
 	          _Drawer2.default,
 	          {
+	            containerStyle: drawerStyle,
 	            docked: false,
 	            open: this.state.open,
 	            onRequestChange: function onRequestChange(open) {
 	              return _this2.setState({ open: open });
 	            }
 	          },
-	          _react2.default.createElement(
-	            _MenuItem2.default,
-	            null,
-	            'Menu Item'
-	          ),
-	          _react2.default.createElement(
-	            _MenuItem2.default,
-	            null,
-	            'Menu Item 2'
-	          )
+	          (0, _lodash.values)(this.props.totals).map(function (player) {
+	            return _react2.default.createElement(_DrawerItem2.default, { player: player });
+	          })
 	        )
 	      );
 	    }
@@ -48446,10 +48479,11 @@
 	}();
 
 /***/ }),
-/* 390 */
-/*!*************************************************************!*\
-  !*** ./~/material-ui/svg-icons/navigation/chevron-right.js ***!
-  \*************************************************************/
+/* 390 */,
+/* 391 */
+/*!*******************************************!*\
+  !*** ./src/components/core/DrawerItem.js ***!
+  \*******************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48458,30 +48492,38 @@
 	  value: true
 	});
 	
+	var _MenuItem = __webpack_require__(/*! material-ui/MenuItem */ 370);
+	
+	var _MenuItem2 = _interopRequireDefault(_MenuItem);
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _pure = __webpack_require__(/*! recompose/pure */ 303);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var _pure2 = _interopRequireDefault(_pure);
-	
-	var _SvgIcon = __webpack_require__(/*! ../../SvgIcon */ 309);
-	
-	var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
-	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { default: obj };
-	}
-	
-	var NavigationChevronRight = function NavigationChevronRight(props) {
-	  return _react2.default.createElement(_SvgIcon2.default, props, _react2.default.createElement('path', { d: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' }));
+	var DrawerItem = function DrawerItem(props) {
+	  return _react2.default.createElement(
+	    _MenuItem2.default,
+	    null,
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'drawer-item' },
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        props.player.userName
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        props.player.total
+	      )
+	    )
+	  );
 	};
-	NavigationChevronRight = (0, _pure2.default)(NavigationChevronRight);
-	NavigationChevronRight.displayName = 'NavigationChevronRight';
-	NavigationChevronRight.muiName = 'SvgIcon';
 	
-	exports.default = NavigationChevronRight;
+	exports.default = DrawerItem;
 
 /***/ })
 /******/ ]);
