@@ -8,6 +8,9 @@ const RecordItem = (props) => {
       <div className="game-data">
         <div className="game-icon">
           <i className="fa fa-home" aria-hidden="true"></i>
+          <div className="game-total">
+            {props.total.toString()}
+          </div>
         </div>
         <div className="game-info">
           <div className="game-location">

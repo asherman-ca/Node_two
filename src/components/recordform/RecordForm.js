@@ -14,7 +14,12 @@ export default class RecordForm extends React.Component {
     super(props);
     this.state = {
       controlledDate: null,
-      value: 1
+      value: '',
+      userName: '',
+      take: 0,
+      location: '',
+      date: 0,
+      sessions: []
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,25 +32,33 @@ export default class RecordForm extends React.Component {
     });
   };
 
-  handleOtherChange = (event, index, value) => this.setState({ value });
+  handleOtherChange = (event, index, value) => this.setState({ userName: value });
 
   render() {
 
     return (
       <div className="record-form">
         <div className="record-form-item">
+          <div className="record-form-title">
+            Add Game
+          </div>
           <DatePicker
-            hintText="Controlled Date Input"
+            hintText="Enter Date"
             value={this.state.controlledDate}
             onChange={this.handleChange}
           />
-          <DropDownMenu value={this.state.value} onChange={this.handleOtherChange}>
-            <MenuItem value={1} primaryText="Never" />
-            <MenuItem value={2} primaryText="Every Night" />
-            <MenuItem value={3} primaryText="Weeknights" />
-            <MenuItem value={4} primaryText="Weekends" />
-            <MenuItem value={5} primaryText="Weekly" />
-          </DropDownMenu>
+          <div className="record-form-dropdown">
+            <div className="record-form-dropdown-text">
+              Add Player
+            </div>
+            <DropDownMenu value={this.state.userName} onChange={this.handleOtherChange}>
+              <MenuItem value={'Alex'} primaryText="Alex" />
+              <MenuItem value={'David'} primaryText="David" />
+              <MenuItem value={'Kelly'} primaryText="Kelly" />
+              <MenuItem value={'Raymond'} primaryText="Raymond" />
+              <MenuItem value={'Matt'} primaryText="Matt" />
+            </DropDownMenu>
+          </div>
         </div>
       </div>
     );

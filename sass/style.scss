@@ -15,21 +15,22 @@
 .origin {
   height: 100vh;
   overflow-y: overlay;
-  font-family: 'Pacifico', cursive;
+  // font-family: 'Pacifico', cursive;
+  font-family: roboto, sans-serif;
 }
 
 
 .drawer-title {
   font-size: 20px;
-  font-family: 'Pacifico', cursive;
+  // font-family: 'Pacifico', cursive;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .drawer-footer {
   width: 100%;
   position: absolute;
   bottom: 0px;
   padding-bottom: 20px;
-  font-family: 'Pacifico', cursive;
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -41,9 +42,8 @@
   padding: 0px 25px;
   display: flex;
   justify-content: center;
-  font-family: 'Pacifico', cursive;
 
   .drawer-name {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }

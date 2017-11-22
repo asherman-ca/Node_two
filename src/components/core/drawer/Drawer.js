@@ -44,7 +44,7 @@ export default class DrawerContainer extends React.Component {
               return <DrawerItem player={player} />;
             })}
           <div className="drawer-footer">
-            <div>
+            <div style={{marginBottom: 5}}>
               Produced by Alex Sherman
             </div>
             <div>

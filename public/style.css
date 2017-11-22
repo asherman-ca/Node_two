@@ -8,7 +8,22 @@
   align-items: center;
   background: #fafafa; }
   .record-form .record-form-item {
-    width: 50px; }
+    padding: 50px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    .record-form .record-form-item .record-form-title {
+      text-align: left;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #B2B2B2; }
+    .record-form .record-form-item .record-form-dropdown {
+      display: flex; }
+      .record-form .record-form-item .record-form-dropdown .record-form-dropdown-text {
+        display: flex;
+        align-items: center;
+        padding-top: 8.5px;
+        color: #B2B2B2; }
 
 .records-index {
   min-height: calc(100% - 125px);
@@ -22,7 +37,10 @@
   .records-index .records-index-item {
     width: 600px;
     margin-bottom: 25px;
-    font-size: 20px; }
+    font-size: 20px;
+    background: white;
+    padding: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
     .records-index .records-index-item .game-data {
       width: 600px;
       margin: 5px 0px;
@@ -31,13 +49,13 @@
       display: flex;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       background: white;
-      font-size: 20px;
-      font-weight: bold; }
+      font-size: 20px; }
       .records-index .records-index-item .game-data .game-info {
         flex: 1;
         display: flex;
         justify-content: space-between;
-        padding-right: 20px; }
+        padding-right: 20px;
+        background: #fafafa; }
       .records-index .records-index-item .game-data .game-icon {
         border-radius: 15px;
         width: 70px;
@@ -49,6 +67,14 @@
         text-align: center;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         background: #419AD6; }
+      .records-index .records-index-item .game-data .game-total {
+        width: 37.5px;
+        color: white; }
+      .records-index .records-index-item .game-data .game-location {
+        font-weight: bold; }
+      .records-index .records-index-item .game-data .game-date {
+        color: #B2B2B2;
+        font-size: 17.5px; }
       .records-index .records-index-item .game-data .game-location, .records-index .records-index-item .game-data .game-date {
         display: flex;
         align-items: center; }
@@ -58,11 +84,10 @@
       border-bottom-left-radius: 15px;
       display: flex;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      background: white; }
+      background: #fafafa; }
       .records-index .records-index-item .player-item .player-name {
         display: flex;
-        align-items: center;
-        font-weight: bold; }
+        align-items: center; }
       .records-index .records-index-item .player-item .player-take {
         width: 37.5px;
         color: white; }
@@ -215,19 +240,18 @@ table {
 .origin {
   height: 100vh;
   overflow-y: overlay;
-  font-family: 'Pacifico', cursive; }
+  font-family: roboto, sans-serif; }
 
 .drawer-title {
   font-size: 20px;
-  font-family: 'Pacifico', cursive;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-bottom: 10px; }
 
 .drawer-footer {
   width: 100%;
   position: absolute;
   bottom: 0px;
   padding-bottom: 20px;
-  font-family: 'Pacifico', cursive;
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -238,7 +262,6 @@ table {
 .drawer-item {
   padding: 0px 25px;
   display: flex;
-  justify-content: center;
-  font-family: 'Pacifico', cursive; }
+  justify-content: center; }
   .drawer-item .drawer-name {
-    margin-right: 10px; }
+    margin-right: 5px; }
