@@ -45948,44 +45948,48 @@
 	
 	var testData = {
 	  110417: {
-	    1: { userName: 'Alex', userId: 1, take: -40 },
-	    2: { userName: 'Raymond', userId: 2, take: 80 },
-	    3: { userName: 'Matt', userId: 3, take: -40 },
-	    4: { userName: 'David', userId: 4, take: 800 },
-	    5: { userName: 'Carson', userId: 5, take: -40 },
-	    6: { userName: 'Kelly', userId: 6, take: 60 }
+	    loc: 'Kellys place',
+	    players: {
+	      1: { userName: 'Alex', userId: 1, take: -40 },
+	      2: { userName: 'Raymond', userId: 2, take: 80 },
+	      3: { userName: 'Matt', userId: 3, take: -40 },
+	      4: { userName: 'David', userId: 4, take: 800 },
+	      5: { userName: 'Carson', userId: 5, take: -40 },
+	      6: { userName: 'Kelly', userId: 6, take: 60 }
+	    }
 	  },
-	  102817: {
-	    1: { userName: 'Alex', userId: 1, take: -40 },
-	    2: { userName: 'Raymond', userId: 2, take: 80 },
-	    3: { userName: 'Matt', userId: 3, take: -40 },
-	    4: { userName: 'David', userId: 4, take: 80 },
-	    5: { userName: 'Carson', userId: 5, take: -40 },
-	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  111117: {
+	    loc: 'Kellys place',
+	    players: {
+	      1: { userName: 'Alex', userId: 1, take: -40 },
+	      2: { userName: 'Raymond', userId: 2, take: 80 },
+	      3: { userName: 'Matt', userId: 3, take: -40 },
+	      4: { userName: 'David', userId: 4, take: 800 },
+	      5: { userName: 'Carson', userId: 5, take: -40 },
+	      6: { userName: 'Kelly', userId: 6, take: 60 }
+	    }
 	  },
-	  102117: {
-	    1: { userName: 'Alex', userId: 1, take: -40 },
-	    2: { userName: 'Raymond', userId: 2, take: 80 },
-	    3: { userName: 'Matt', userId: 3, take: -40 },
-	    4: { userName: 'David', userId: 4, take: 80 },
-	    5: { userName: 'Carson', userId: 5, take: -40 },
-	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  111817: {
+	    loc: 'Kellys place',
+	    players: {
+	      1: { userName: 'Alex', userId: 1, take: -40 },
+	      2: { userName: 'Raymond', userId: 2, take: 80 },
+	      3: { userName: 'Matt', userId: 3, take: -40 },
+	      4: { userName: 'David', userId: 4, take: 800 },
+	      5: { userName: 'Carson', userId: 5, take: -40 },
+	      6: { userName: 'Kelly', userId: 6, take: 60 }
+	    }
 	  },
-	  101417: {
-	    1: { userName: 'Alex', userId: 1, take: -40 },
-	    2: { userName: 'Raymond', userId: 2, take: 80 },
-	    3: { userName: 'Matt', userId: 3, take: -40 },
-	    4: { userName: 'David', userId: 4, take: 80 },
-	    5: { userName: 'Carson', userId: 5, take: -40 },
-	    6: { userName: 'Kelly', userId: 6, take: 100 }
-	  },
-	  100717: {
-	    1: { userName: 'Alex', userId: 1, take: -40 },
-	    2: { userName: 'Raymond', userId: 2, take: 80 },
-	    3: { userName: 'Matt', userId: 3, take: -40 },
-	    4: { userName: 'David', userId: 4, take: 80 },
-	    5: { userName: 'Carson', userId: 5, take: -40 },
-	    6: { userName: 'Kelly', userId: 6, take: 100 }
+	  112517: {
+	    loc: 'Kellys place',
+	    players: {
+	      1: { userName: 'Alex', userId: 1, take: -40 },
+	      2: { userName: 'Raymond', userId: 2, take: 80 },
+	      3: { userName: 'Matt', userId: 3, take: -40 },
+	      4: { userName: 'David', userId: 4, take: 800 },
+	      5: { userName: 'Carson', userId: 5, take: -40 },
+	      6: { userName: 'Kelly', userId: 6, take: 60 }
+	    }
 	  }
 	};
 	
@@ -46010,7 +46014,7 @@
 	        'div',
 	        { className: 'records-index' },
 	        (0, _lodash.keys)(testData).map(function (key, i) {
-	          return _react2.default.createElement(_RecordItem2.default, { key: i, date: key, data: testData[key] });
+	          return _react2.default.createElement(_RecordItem2.default, { key: i, date: key, loc: testData[key].loc, data: testData[key].players });
 	        })
 	      );
 	    }
@@ -46049,6 +46053,29 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'records-index-item' },
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'game-data' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'game-icon' },
+	        _react2.default.createElement('i', { className: 'fa fa-home', 'aria-hidden': 'true' })
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'game-info' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'game-location' },
+	          props.loc
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'game-date' },
+	          (0, _records.dateParser)(props.date)
+	        )
+	      )
+	    ),
 	    (0, _records.sortData)((0, _lodash.values)(props.data)).map(function (player) {
 	      return _react2.default.createElement(
 	        'div',
@@ -46070,12 +46097,7 @@
 	          player.userName
 	        )
 	      );
-	    }),
-	    _react2.default.createElement(
-	      'div',
-	      { className: 'game-date' },
-	      (0, _records.dateParser)(props.date)
-	    )
+	    })
 	  );
 	};
 	

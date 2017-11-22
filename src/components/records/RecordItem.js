@@ -5,6 +5,19 @@ import { dateParser, sortData } from '../../helpers/records';
 const RecordItem = (props) => {
   return (
     <div className="records-index-item">
+      <div className="game-data">
+        <div className="game-icon">
+          <i className="fa fa-home" aria-hidden="true"></i>
+        </div>
+        <div className="game-info">
+          <div className="game-location">
+            {props.loc}
+          </div>
+          <div className="game-date">
+            {dateParser(props.date)}
+          </div>
+        </div>
+      </div>
       {sortData(values(props.data)).map(player => {
         return <div className="player-item" 
                     key={player.userId}>
@@ -15,7 +28,6 @@ const RecordItem = (props) => {
           <div className="player-name">{player.userName}</div>          
         </div>;
       })}
-      <div className="game-date">{dateParser(props.date)}</div>
     </div>
   );
 };
