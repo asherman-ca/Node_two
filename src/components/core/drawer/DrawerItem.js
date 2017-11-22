@@ -5,10 +5,10 @@ const DrawerItem = (props) => {
   return(
     <MenuItem>
       <div className="drawer-item">
-        <div>
+        <div className="drawer-name">
           {props.player.userName}
         </div>
-        <div>
+        <div classNAme="drawer-total">
           {props.player.total}
         </div>
       </div>

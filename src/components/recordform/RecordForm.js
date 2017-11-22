@@ -9,10 +9,12 @@ export default class RecordForm extends React.Component {
   }
 
   render() {
-    console.log('auth form');
+
     return (
-      <div>
-        Record Form
+      <div className="record-form">
+        <div className="record-form-item">
+          Record Form
+        </div>
       </div>
     );
   }

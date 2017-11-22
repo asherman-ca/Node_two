@@ -1,3 +1,63 @@
+.record-form {
+  min-height: calc(100% - 125px);
+  width: 100%;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa; }
+  .record-form .record-form-item {
+    width: 50px; }
+
+.records-index {
+  min-height: calc(100% - 125px);
+  width: 100%;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa; }
+  .records-index .records-index-item {
+    width: 600px;
+    margin-bottom: 25px;
+    font-size: 20px; }
+    .records-index .records-index-item .game-date {
+      margin-top: 10px;
+      margin-left: 7px;
+      font-size: 20px;
+      color: #999; }
+    .records-index .records-index-item .player-item {
+      margin: 5px 0px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      display: flex;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      background: white; }
+      .records-index .records-index-item .player-item .player-name {
+        display: flex;
+        align-items: center;
+        font-weight: bold; }
+      .records-index .records-index-item .player-item .player-take {
+        width: 37.5px;
+        color: white; }
+      .records-index .records-index-item .player-item .positive,
+      .records-index .records-index-item .player-item .negative {
+        border-radius: 15px;
+        width: 70px;
+        margin-right: 15px;
+        padding: 5px 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+      .records-index .records-index-item .player-item .positive {
+        background: #30673a; }
+      .records-index .records-index-item .player-item .negative {
+        background: #ea2a2a; }
+
 html,
 body,
 div,
@@ -130,57 +190,31 @@ table {
 
 .origin {
   height: 100vh;
-  overflow-y: overlay; }
+  overflow-y: overlay;
+  font-family: 'Pacifico', cursive; }
 
-.drawer-item {
-  padding: 0px 25px;
-  display: flex;
-  justify-content: space-around; }
+.drawer-title {
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+  font-weight: bold; }
 
-.records-index {
-  min-height: calc(100% - 90px);
+.drawer-footer {
   width: 100%;
-  padding-top: 35px;
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: 20px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fafafa; }
-  .records-index .records-index-item {
-    width: 600px;
-    margin-bottom: 25px;
-    font-size: 20px; }
-    .records-index .records-index-item .game-date {
-      margin-top: 10px;
-      margin-left: 7px;
-      font-size: 20px;
-      color: #999; }
-    .records-index .records-index-item .player-item {
-      margin: 5px 0px;
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
-      display: flex;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      background: white; }
-      .records-index .records-index-item .player-item .player-name {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        font-family: sans-serif; }
-      .records-index .records-index-item .player-item .player-take {
-        width: 37.5px;
-        color: white; }
-      .records-index .records-index-item .player-item .positive, .records-index .records-index-item .player-item .negative {
-        border-radius: 15px;
-        width: 70px;
-        margin-right: 15px;
-        padding: 5px 10px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-      .records-index .records-index-item .player-item .positive {
-        background: #30673a; }
-      .records-index .records-index-item .player-item .negative {
-        background: #ea2a2a; }
+  text-align: center; }
+
+.drawer-item {
+  padding: 0px 25px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Pacifico', cursive; }
+  .drawer-item .drawer-name {
+    margin-right: 10px; }

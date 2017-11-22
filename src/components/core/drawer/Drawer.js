@@ -39,9 +39,20 @@ export default class DrawerSimpleExample extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          {values(this.props.totals).map(player => {
-            return <DrawerItem player={player} />;
-          })}
+          <div className="drawer-title">Cash Leaders</div>
+            {values(this.props.totals).map(player => {
+              return <DrawerItem player={player} />;
+            })}
+          <div className="drawer-footer">
+            <div>
+              Produced by Alex Sherman
+            </div>
+            <div>
+              <a href="https://www.asherman.online">
+                www.asherman.online
+              </a>
+            </div>
+          </div>
         </Drawer>
       </div>
     );

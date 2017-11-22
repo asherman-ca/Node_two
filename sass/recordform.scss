@@ -1,0 +1,13 @@
+.record-form {
+  min-height: calc(100% - 125px);
+  width: 100%;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  .record-form-item {
+    width: 50px;
+  }
+}

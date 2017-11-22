@@ -1,7 +1,7 @@
 import React from 'react';
 import Navtab from './navtab/NavtabContainer';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import Drawer from './Drawer';
+import Drawer from './drawer/Drawer';
 
 const style = {
   position: 'absolute',
