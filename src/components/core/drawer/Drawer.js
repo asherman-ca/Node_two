@@ -13,7 +13,7 @@ const drawerStyle = {
   paddingTop: 25
 };
 
-export default class DrawerSimpleExample extends React.Component {
+export default class DrawerContainer extends React.Component {
 
   constructor(props) {
     super(props);
