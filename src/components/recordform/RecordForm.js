@@ -17,7 +17,7 @@ export default class RecordForm extends React.Component {
       value: '',
       userName: '',
       take: 0,
-      location: '',
+      loc: '',
       date: 0,
       sessions: []
     };
@@ -34,6 +34,8 @@ export default class RecordForm extends React.Component {
 
   handleOtherChange = (event, index, value) => this.setState({ userName: value });
 
+  handleLocChange = (event, index, value) => this.setState({ loc: value });
+
   render() {
 
     return (
@@ -47,6 +49,16 @@ export default class RecordForm extends React.Component {
             value={this.state.controlledDate}
             onChange={this.handleChange}
           />
+          <div className="record-form-dropdown">
+            <div className="record-form-dropdown-text">
+              Add Location
+            </div>
+            <DropDownMenu value={this.state.loc} onChange={this.handleLocChange}>
+              <MenuItem value={'Kellys Place'} primaryText="Kellys Place" />
+              <MenuItem value={'App Academy'} primaryText="App Academy" />
+            </DropDownMenu>
+          </div>
+        
           <div className="record-form-dropdown">
             <div className="record-form-dropdown-text">
               Add Player

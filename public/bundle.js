@@ -46530,12 +46530,16 @@
 	      return _this.setState({ userName: value });
 	    };
 	
+	    _this.handleLocChange = function (event, index, value) {
+	      return _this.setState({ loc: value });
+	    };
+	
 	    _this.state = {
 	      controlledDate: null,
 	      value: '',
 	      userName: '',
 	      take: 0,
-	      location: '',
+	      loc: '',
 	      date: 0,
 	      sessions: []
 	    };
@@ -46565,6 +46569,21 @@
 	            value: this.state.controlledDate,
 	            onChange: this.handleChange
 	          }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'record-form-dropdown' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'record-form-dropdown-text' },
+	              'Add Location'
+	            ),
+	            _react2.default.createElement(
+	              _DropDownMenu2.default,
+	              { value: this.state.loc, onChange: this.handleLocChange },
+	              _react2.default.createElement(_MenuItem2.default, { value: 'Kellys Place', primaryText: 'Kellys Place' }),
+	              _react2.default.createElement(_MenuItem2.default, { value: 'App Academy', primaryText: 'App Academy' })
+	            )
+	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'record-form-dropdown' },
