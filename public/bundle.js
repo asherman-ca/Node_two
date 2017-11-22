@@ -46498,6 +46498,10 @@
 	
 	var _MenuItem2 = _interopRequireDefault(_MenuItem);
 	
+	var _TextField = __webpack_require__(/*! material-ui/TextField */ 379);
+	
+	var _TextField2 = _interopRequireDefault(_TextField);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46505,12 +46509,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var styles = {
-	  customWidth: {
-	    width: 200
-	  }
-	};
 	
 	var RecordForm = function (_React$Component) {
 	  _inherits(RecordForm, _React$Component);
@@ -46532,6 +46530,11 @@
 	
 	    _this.handleLocChange = function (event, index, value) {
 	      return _this.setState({ loc: value });
+	    };
+	
+	    _this.handleTakeChange = function (event, newValue) {
+	      console.log(newValue);
+	      _this.setState({ take: newValue });
 	    };
 	
 	    _this.state = {
@@ -46586,20 +46589,32 @@
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'record-form-dropdown' },
+	            { className: 'record-form-player' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'record-form-dropdown-text' },
-	              'Add Player'
+	              { className: 'record-form-row' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'record-form-player-text' },
+	                'Enter Player Name'
+	              ),
+	              _react2.default.createElement(
+	                _DropDownMenu2.default,
+	                { value: this.state.userName, onChange: this.handleOtherChange },
+	                _react2.default.createElement(_MenuItem2.default, { value: 'Alex', primaryText: 'Alex' }),
+	                _react2.default.createElement(_MenuItem2.default, { value: 'David', primaryText: 'David' }),
+	                _react2.default.createElement(_MenuItem2.default, { value: 'Kelly', primaryText: 'Kelly' }),
+	                _react2.default.createElement(_MenuItem2.default, { value: 'Raymond', primaryText: 'Raymond' }),
+	                _react2.default.createElement(_MenuItem2.default, { value: 'Matt', primaryText: 'Matt' })
+	              )
 	            ),
 	            _react2.default.createElement(
-	              _DropDownMenu2.default,
-	              { value: this.state.userName, onChange: this.handleOtherChange },
-	              _react2.default.createElement(_MenuItem2.default, { value: 'Alex', primaryText: 'Alex' }),
-	              _react2.default.createElement(_MenuItem2.default, { value: 'David', primaryText: 'David' }),
-	              _react2.default.createElement(_MenuItem2.default, { value: 'Kelly', primaryText: 'Kelly' }),
-	              _react2.default.createElement(_MenuItem2.default, { value: 'Raymond', primaryText: 'Raymond' }),
-	              _react2.default.createElement(_MenuItem2.default, { value: 'Matt', primaryText: 'Matt' })
+	              'div',
+	              { className: 'record-form-row' },
+	              _react2.default.createElement(_TextField2.default, {
+	                onChange: this.handleTakeChange,
+	                floatingLabelText: 'Enter Take'
+	              })
 	            )
 	          )
 	        )

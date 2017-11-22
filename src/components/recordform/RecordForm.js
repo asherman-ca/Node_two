@@ -2,12 +2,7 @@ import React from 'react';
 import DatePicker from 'material-ui/DatePicker';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
-const styles = {
-  customWidth: {
-    width: 200,
-  },
-};
+import TextField from 'material-ui/TextField';
 
 export default class RecordForm extends React.Component {
   constructor(props) {
@@ -36,6 +31,11 @@ export default class RecordForm extends React.Component {
 
   handleLocChange = (event, index, value) => this.setState({ loc: value });
 
+  handleTakeChange = (event, newValue) => {
+    console.log(newValue);
+    this.setState({ take: newValue }); 
+  }
+
   render() {
 
     return (
@@ -59,17 +59,25 @@ export default class RecordForm extends React.Component {
             </DropDownMenu>
           </div>
         
-          <div className="record-form-dropdown">
-            <div className="record-form-dropdown-text">
-              Add Player
+          <div className="record-form-player">
+            <div className="record-form-row">
+              <div className="record-form-player-text">
+                Enter Player Name
+              </div>
+              <DropDownMenu value={this.state.userName} onChange={this.handleOtherChange}>
+                <MenuItem value={'Alex'} primaryText="Alex" />
+                <MenuItem value={'David'} primaryText="David" />
+                <MenuItem value={'Kelly'} primaryText="Kelly" />
+                <MenuItem value={'Raymond'} primaryText="Raymond" />
+                <MenuItem value={'Matt'} primaryText="Matt" />
+              </DropDownMenu>
             </div>
-            <DropDownMenu value={this.state.userName} onChange={this.handleOtherChange}>
-              <MenuItem value={'Alex'} primaryText="Alex" />
-              <MenuItem value={'David'} primaryText="David" />
-              <MenuItem value={'Kelly'} primaryText="Kelly" />
-              <MenuItem value={'Raymond'} primaryText="Raymond" />
-              <MenuItem value={'Matt'} primaryText="Matt" />
-            </DropDownMenu>
+            <div className="record-form-row">
+              <TextField
+                onChange={this.handleTakeChange}
+                floatingLabelText="Enter Take"
+              />
+            </div>
           </div>
         </div>
       </div>
